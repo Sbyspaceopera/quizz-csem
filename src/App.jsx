@@ -77,38 +77,38 @@ function App() {
       )}
 
       {/*IMAGES */}
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-8">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
         {images.map((image) => (
           <div key={image.id} className="relative">
             <img
               src={image.url}
               alt={image.name}
-              className={`h-48 object-cover aspect-video cursor-pointer transition duration-500 ease-in-out transform ${
+              className={`h-48 object-cover rounded-md aspect-video cursor-pointer transition duration-500 ease-in-out transform ${
                 selectedImages.some(
                   (selectedImage) => selectedImage.id === image.id
                 )
-                  ? 'scale-110'
+                  ? 'border-solid border-4 border-green-500'
                   : ''
               }`}
               onClick={() => handleImageClick(image)}
             />
             <div
-              className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white flex items-center justify-center px-4 cursor-pointer transition duration-500 ease-in-out transform ${
+              className={`absolute top-0 left-0 w-full rounded-md h-full bg-black bg-opacity-50 text-white flex items-center justify-center px-4 cursor-pointer transition duration-500 ease-in-out transform ${
                 selectedImages.some(
                   (selectedImage) => selectedImage.id === image.id
                 )
-                  ? 'scale-110'
+                  ? 'border-solid border-4 border-green-500'
                   : ''
               }`}
               onClick={() => handleTitleClick(image)}
             >
-              {image.title}
+              {image.name}
             </div>
           </div>
         ))}
       </div>
 
-      
+
     </main>
   );
 }
