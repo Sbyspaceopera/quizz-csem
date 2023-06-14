@@ -26,7 +26,7 @@ function App() {
     }
   };
 
-  const handleTitleClick = (image) => {
+  /* const handleTitleClick = (image) => {
     const imageIndex = selectedImages.findIndex((img) => img.id === image.id);
     if (imageIndex === -1) {
       setSelectedImages((prevImages) => [...prevImages, image]);
@@ -44,20 +44,20 @@ function App() {
         )
       );
     }
-  };
+  }; */
 
   const handleKeywordsVisibility = () => {
     setIsKeywordsVisible(!isKeywordsVisible);
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-full">
       <h1 className="text-4xl font-bold mb-8">Choisissez ce que vous aimez</h1>
 
       {/*BUTTON */}
       <button
         onClick={handleKeywordsVisibility}
-        className="mb-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none"
+        className="mb-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none"
       >
         {isKeywordsVisible ? 'Cacher les mots-clés' : 'Voir les mots-clés'}
       </button>
@@ -92,7 +92,10 @@ function App() {
               }`}
               onClick={() => handleImageClick(image)}
             />
-            <div
+            {
+              /*
+              
+              <div
               className={`absolute top-0 left-0 w-full rounded-md h-full bg-black bg-opacity-50 text-white flex items-center justify-center px-4 cursor-pointer transition duration-500 ease-in-out transform ${
                 selectedImages.some(
                   (selectedImage) => selectedImage.id === image.id
@@ -104,6 +107,9 @@ function App() {
             >
               {image.name}
             </div>
+              */
+            }
+            
           </div>
         ))}
       </div>
